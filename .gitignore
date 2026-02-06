@@ -1,0 +1,193 @@
+# .gitignore
+
+# Workspace - local work (not tracked)
+workspace/*
+!workspace/README.md
+!workspace/temp/
+!workspace/resources/
+!workspace/sandbox/
+!workspace/outputs/
+workspace/temp/*
+workspace/resources/*
+workspace/sandbox/*
+workspace/outputs/*
+!workspace/**/.gitkeep
+
+# Agent settings (personal/machine-specific)
+.claude/settings.json
+.gemini/settings.json
+
+# Agent local files
+CLAUDE.local.md
+AGENTS.local.md
+GEMINI.local.md
+.claude/settings.local.json
+.gemini/settings.local.json
+
+# Environment files
+.env
+.env.local
+.env*.local
+.env.production
+.env.development
+
+# =============================================================================
+# macOS
+# =============================================================================
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+*.icloud
+
+# =============================================================================
+# Windows
+# =============================================================================
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+*.stackdump
+*.lnk
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+
+# Windows Installer files
+*.tmp
+
+# Windows shortcuts
+*.lnk
+
+# =============================================================================
+# Linux / Ubuntu
+# =============================================================================
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+.wget-hsts
+.bash_history
+.zsh_history
+
+# KDE
+.kde/
+
+# GNOME
+.gnome/
+.local/share/Trash/
+
+# =============================================================================
+# Editors & IDEs
+# =============================================================================
+# VSCode
+.vscode/
+*.code-workspace
+
+# JetBrains (IntelliJ, WebStorm, PyCharm, etc.)
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+
+# Vim
+*.swp
+*.swo
+*.swn
+*~
+.netrwhist
+tags
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# Sublime Text
+*.sublime-workspace
+*.sublime-project
+
+# Atom
+.atom/
+
+# TextMate
+*.tmproj
+*.tmproject
+tmtags
+
+# =============================================================================
+# Node.js
+# =============================================================================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.npm/
+.yarn/
+.pnp.*
+
+# =============================================================================
+# Python
+# =============================================================================
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+.Python
+pip-log.txt
+pip-delete-this-directory.txt
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# =============================================================================
+# Build outputs
+# =============================================================================
+dist/
+build/
+*.log
+logs/
+
+# =============================================================================
+# Misc
+# =============================================================================
+*.bak
+*.backup
+*.old
+*.orig
+*.tmp
+*.temp
+.cache/
+.sass-cache/
+*.pid
+*.seed
+*.gz
+*.zip
+*.tar
+*.rar
