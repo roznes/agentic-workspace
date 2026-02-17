@@ -17,7 +17,13 @@ shared/                    # YOU ARE HERE - shared across all agents
 
 workspace/                 # Local work area (gitignored content)
 ├── resources/             # INPUT: docs, images, data
+│   ├── docs/              # Reference documents
+│   ├── images/            # Screenshots, diagrams
+│   └── data/              # Data files (JSON, CSV)
 ├── outputs/               # OUTPUT: generated code, reports
+│   ├── generated/         # AI-generated code
+│   ├── reports/           # Generated reports
+│   └── exports/           # Exported files
 ├── sandbox/               # Experiments & repos
 │   ├── repos/             # Cloned repositories for AI review
 │   ├── experiments/       # Code experiments

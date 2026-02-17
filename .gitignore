@@ -9,11 +9,26 @@ workspace/*
 !workspace/outputs/
 workspace/temp/*
 workspace/resources/*
+!workspace/resources/docs/
+!workspace/resources/images/
+!workspace/resources/data/
+workspace/resources/docs/*
+workspace/resources/images/*
+workspace/resources/data/*
 workspace/sandbox/*
 !workspace/sandbox/experiments/
 !workspace/sandbox/repos/
 !workspace/sandbox/test-data/
+workspace/sandbox/experiments/*
+workspace/sandbox/repos/*
+workspace/sandbox/test-data/*
 workspace/outputs/*
+!workspace/outputs/generated/
+!workspace/outputs/reports/
+!workspace/outputs/exports/
+workspace/outputs/generated/*
+workspace/outputs/reports/*
+workspace/outputs/exports/*
 !workspace/**/.gitkeep
 
 # Agent settings (personal/machine-specific)

@@ -15,6 +15,7 @@ All agents share these files:
 ```
 shared/
 ├── README.md              # Quick context for AI
+├── context/               # User-added context files
 ├── knowledge/             # Persistent memories by topic
 │   └── [topic]/README.md
 ├── rules/coding-standards.md

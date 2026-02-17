@@ -12,6 +12,7 @@ agentic-workspace/
 │
 ├── shared/                   # Shared across all agents
 │   ├── README.md             # Quick context for AI
+│   ├── context/              # User-added context files
 │   ├── knowledge/            # Memories by topic (say "remember")
 │   ├── rules/                # Coding standards
 │   └── skills/               # planner, reviewer
@@ -25,7 +26,13 @@ agentic-workspace/
 │
 └── workspace/                # Local work (gitignored)
     ├── resources/            # Input: docs, images, data
+    │   ├── docs/             # Reference documents
+    │   ├── images/           # Screenshots, diagrams
+    │   └── data/             # Data files (JSON, CSV)
     ├── outputs/              # Generated code, reports
+    │   ├── generated/        # AI-generated code
+    │   ├── reports/          # Generated reports
+    │   └── exports/          # Exported files
     ├── sandbox/              # Experiments & repos
     │   ├── repos/            # Cloned repos for AI review
     │   ├── experiments/      # Code experiments
