@@ -14,9 +14,10 @@ agentic-workspace/
 │   └── skills/               # planner, reviewer
 │
 ├── .codex/                   # Codex CLI config
-│   └── config.toml           # Sandbox, approval, model settings
+│   ├── config.toml           # Sandbox, approval, model settings
+│   └── prompts/              # Codex reusable prompts
 │
-├── .agents/                  # Codex skills (native location)
+├── .agents/                  # Shared skills mirror for Codex workflows
 │   └── skills/               # planner, reviewer
 │
 ├── .gemini/                  # Gemini CLI config
@@ -55,7 +56,7 @@ claude                        # or: codex, gemini
 | Agent | Instructions | Config | Skills |
 |-------|-------------|--------|--------|
 | Claude Code | `CLAUDE.md` | `.claude/settings.json` | `.claude/skills/` |
-| Codex CLI | `AGENTS.md` | `.codex/config.toml` | `.agents/skills/` |
+| Codex CLI | `AGENTS.md` | `.codex/config.toml` | `.codex/prompts/` |
 | Gemini CLI | `GEMINI.md` | `.gemini/settings.json` | `.gemini/skills/` |
 
 All agents share `shared/rules/`, `shared/skills/`, and `shared/hooks/`.
@@ -72,7 +73,7 @@ npx skills add <owner>/<skill-name>
 
 ## Hooks
 
-Shared secret scanning hook (`shared/hooks/block-secrets.sh`) used by all agents to block writing files with hardcoded secrets.
+Shared secret scanning hook (`shared/hooks/block-secrets.sh`) is configured for Claude and Gemini. Codex uses sandbox and approval controls from `.codex/config.toml`.
 
 ## Workflow
 

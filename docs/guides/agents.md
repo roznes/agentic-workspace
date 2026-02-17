@@ -5,7 +5,7 @@
 | Agent | Instruction File | Config | Skills | Run Command |
 |-------|------------------|--------|--------|-------------|
 | Claude Code | `CLAUDE.md` | `.claude/settings.json` | `.claude/skills/` | `claude` |
-| Codex CLI | `AGENTS.md` | `.codex/config.toml` | `.agents/skills/` | `codex` |
+| Codex CLI | `AGENTS.md` | `.codex/config.toml` | `.codex/prompts/` | `codex` |
 | Gemini CLI | `GEMINI.md` | `.gemini/settings.json` | `.gemini/skills/` | `gemini` |
 
 ## Shared Resources
@@ -38,10 +38,13 @@ Each agent also has its own native config directory:
     └── reviewer/SKILL.md
 
 .codex/
-└── config.toml            # Sandbox, approval, model settings
+├── config.toml            # Sandbox, approval, model settings
+└── prompts/               # Codex reusable prompts
+    ├── planner.md
+    └── reviewer.md
 
 .agents/
-└── skills/                # Codex native skills location
+└── skills/                # Shared skills mirror for Codex workflows
     ├── planner/SKILL.md
     └── reviewer/SKILL.md
 
@@ -83,7 +86,8 @@ npm install -g @openai/codex
 **Files:**
 - `AGENTS.md` - Project instructions (references shared/ via backticks)
 - `.codex/config.toml` - Sandbox, approval policy, model settings
-- `.agents/skills/` - Agent-native skills directory
+- `.codex/prompts/` - Codex reusable prompts
+- `.agents/skills/` - Shared skill mirror used by this template
 
 **Config highlights:**
 - Sandbox: `workspace-write` (no network by default)
@@ -129,7 +133,7 @@ See `shared/README.md`
 
 ## Hooks
 
-All agents support hooks for deterministic automation:
+Hooks are available in Claude and Gemini configs. Codex relies on sandbox/approval controls and reusable prompts.
 
 | Agent | Config Location | Hook Events |
 |-------|----------------|-------------|
@@ -138,7 +142,7 @@ All agents support hooks for deterministic automation:
 | Gemini CLI | `.gemini/settings.json` | `BeforeTool`, `AfterTool`, `BeforeAgent`, `AfterAgent` |
 
 Pre-configured hook in this template:
-- **Secret scanning** (`shared/hooks/block-secrets.sh`) — blocks file writes containing hardcoded secrets, shared by all agents
+- **Secret scanning** (`shared/hooks/block-secrets.sh`) — configured in Claude and Gemini to block writes containing hardcoded secrets
 
 ## Best Practices
 

@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 # Shared hook: block-secrets.sh
 # Prevents writing files that contain hardcoded secrets.
-# Used by all agents (Claude, Codex, Gemini).
+# Configured for Claude and Gemini.
+# Codex uses sandbox and approval controls from `.codex/config.toml`.
 #
 # Exit 0 = allow, Exit 2 = block
 

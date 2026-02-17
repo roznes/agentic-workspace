@@ -16,12 +16,19 @@ See `shared/rules/coding-standards.md`
 
 Available: `planner`, `reviewer`
 
-Skills location: `.agents/skills/`
+Codex reusable prompts location: `.codex/prompts/`
+
+Shared cross-agent skills: `shared/skills/`
 
 Browse [skills.sh](https://skills.sh/) for more:
 ```
 npx skills add <owner>/<skill-name>
 ```
+
+Official Codex Skills:
+- Repo-local: `.agents/skills/`
+- User-local (not in git): `~/.agents/skills/`
+- Docs: https://developers.openai.com/codex/skills
 
 ## Configuration
 

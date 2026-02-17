@@ -1,5 +1,5 @@
 # Codex CLI Configuration
-# Docs: https://developers.openai.com/codex/config-reference/
+# Docs: https://developers.openai.com/codex/config/
 
 # Model selection
 # model = "gpt-5.3-codex"
@@ -14,16 +14,16 @@ sandbox_mode = "workspace-write"
 model_reasoning_effort = "high"
 
 # Personality: "friendly" | "pragmatic" | "none"
-personality = "friendly"
+personality = "pragmatic"
 
 # AGENTS.md max size in bytes (default 32768)
 project_doc_max_bytes = 32768
 
-# History persistence: "save-all" | "none"
-history = "save-all"
+[history]
+# Persistence: "save-all" | "none"
+persistence = "save-all"
 
-# Web search: "cached" | "live" | "disabled"
-web_search = "cached"
+# Live web search is enabled per run with `codex --search` when needed.
 
 [features]
 shell_snapshot = true
