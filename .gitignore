@@ -29,7 +29,8 @@ workspace/outputs/reports/*
 workspace/outputs/exports/*
 !workspace/**/.gitkeep
 
-# Agent local settings (personal/machine-specific)
+# Agent config (user copies agent.config.example.toml → agent.config.toml)
+agent.config.toml
 agent.config.local.toml
 .claude/settings.local.json
 .gemini/settings.local.json

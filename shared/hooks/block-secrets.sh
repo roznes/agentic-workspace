@@ -4,7 +4,7 @@
 # Configured for Claude and Gemini.
 # Codex uses sandbox and approval controls from `.codex/config.toml`.
 #
-# Toggle via agent.config.toml → [hooks] blockSecrets = true|false
+# Toggle via agent.config.toml (copied from agent.config.example.toml) → [hooks] blockSecrets = true|false
 # Local override: agent.config.local.toml (gitignored, checked first)
 # Session override: ALLOW_SECRETS=true claude
 #

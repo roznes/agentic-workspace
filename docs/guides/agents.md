@@ -143,6 +143,7 @@ Hooks are available in Claude and Gemini configs. Codex relies on sandbox/approv
 
 Pre-configured hook in this template:
 - **Secret scanning** (`shared/hooks/block-secrets.sh`) — configured in Claude and Gemini to block writes containing hardcoded secrets
+- Toggle via `agent.config.toml` (`blockSecrets = true|false`). Copy from `agent.config.example.toml` on first setup.
 
 ## Best Practices
 
@@ -151,4 +152,4 @@ Pre-configured hook in this template:
 3. **Use emphasis for critical rules** — `IMPORTANT` or `YOU MUST`
 4. **Prune regularly** — ask "would removing this cause mistakes?"
 5. **Use hooks for deterministic actions** — formatting, secret scanning, logging
-6. **Commit configs to git** — `.claude/settings.json`, `.codex/config.toml`, `.gemini/settings.json`
+6. **Commit configs to git** — `.claude/settings.json`, `.codex/config.toml`, `.gemini/settings.json`, `agent.config.example.toml`

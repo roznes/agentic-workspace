@@ -9,6 +9,7 @@ agentic-workspace/
 ├── CLAUDE.md                 # Claude Code instructions
 ├── AGENTS.md                 # Codex CLI instructions
 ├── GEMINI.md                 # Gemini CLI instructions
+├── agent.config.example.toml # Agent config template (cp → agent.config.toml)
 ├── .claude/                  # Claude Code config
 │   ├── settings.json         # Permissions, hooks
 │   └── skills/               # planner, reviewer
@@ -48,6 +49,7 @@ agentic-workspace/
 ```bash
 git clone <this-repo> my-project
 cd my-project
+cp agent.config.example.toml agent.config.toml
 claude                        # or: codex, gemini
 ```
 
@@ -73,7 +75,7 @@ npx skills add <owner>/<skill-name>
 
 ## Hooks
 
-Shared secret scanning hook (`shared/hooks/block-secrets.sh`) is configured for Claude and Gemini. Codex uses sandbox and approval controls from `.codex/config.toml`.
+Shared secret scanning hook (`shared/hooks/block-secrets.sh`) is configured for Claude and Gemini. Toggle via `agent.config.toml` (`blockSecrets = true|false`). Codex uses sandbox and approval controls from `.codex/config.toml`.
 
 ## Workflow
 

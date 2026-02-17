@@ -1,9 +1,13 @@
 # =============================================================================
-# Agent Config
+# Agent Config (Example)
 # =============================================================================
 # Root-level configuration for AI agent behavior.
-# Committed to git with secure defaults.
-# Override locally with agent.config.local.toml (gitignored).
+#
+# Usage:
+#   cp agent.config.example.toml agent.config.toml
+#
+# agent.config.toml is gitignored — your local copy won't be committed.
+# Optional: agent.config.local.toml overrides agent.config.toml (also gitignored).
 #
 # More sections may be added in the future.
 # =============================================================================
