@@ -30,6 +30,7 @@ workspace/outputs/exports/*
 !workspace/**/.gitkeep
 
 # Agent local settings (personal/machine-specific)
+agent.config.local.toml
 .claude/settings.local.json
 .gemini/settings.local.json
 .codex/config.local.toml

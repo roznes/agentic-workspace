@@ -1,0 +1,29 @@
+# =============================================================================
+# Agent Config
+# =============================================================================
+# Root-level configuration for AI agent behavior.
+# Committed to git with secure defaults.
+# Override locally with agent.config.local.toml (gitignored).
+#
+# More sections may be added in the future.
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# [defaults]
+# -----------------------------------------------------------------------------
+# Reference values — do not modify this section.
+# Copy keys to the sections below to override.
+#
+# [hooks]
+# blockSecrets = true       # true | false
+
+# =============================================================================
+# Active Config
+# =============================================================================
+
+[hooks]
+
+# Block writing files that contain hardcoded secrets.
+# Set to false for PoC / experiments.
+# Values: true | false
+blockSecrets = true
