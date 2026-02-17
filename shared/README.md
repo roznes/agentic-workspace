@@ -13,7 +13,7 @@ shared/                    # YOU ARE HERE - shared across all agents
 ├── rules/coding-standards.md
 ├── skills/planner/        # Planning skill
 ├── skills/reviewer/       # Code review skill
-├── hooks/block-secrets.sh # Secret scanning (used by all agents)
+├── hooks/block-secrets.sh # Secret scanning (Claude, Gemini)
 └── context/               # User-added context files
 ```
 
