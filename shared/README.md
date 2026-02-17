@@ -13,21 +13,13 @@ shared/                    # YOU ARE HERE - shared across all agents
 ├── rules/coding-standards.md
 ├── skills/planner/        # Planning skill
 ├── skills/reviewer/       # Code review skill
+├── hooks/block-secrets.sh # Secret scanning (used by all agents)
 └── context/               # User-added context files
 
 workspace/                 # Local work area (gitignored content)
 ├── resources/             # INPUT: docs, images, data
-│   ├── docs/              # Reference documents
-│   ├── images/            # Screenshots, diagrams
-│   └── data/              # Data files (JSON, CSV)
 ├── outputs/               # OUTPUT: generated code, reports
-│   ├── generated/         # AI-generated code
-│   ├── reports/           # Generated reports
-│   └── exports/           # Exported files
 ├── sandbox/               # Experiments & repos
-│   ├── repos/             # Cloned repositories for AI review
-│   ├── experiments/       # Code experiments
-│   └── test-data/         # Test data
 └── temp/                  # Session scratch files
 ```
 
@@ -36,7 +28,7 @@ workspace/                 # Local work area (gitignored content)
 | User Says | Action |
 |-----------|--------|
 | "Remember X" | Add to `shared/knowledge/[topic]/` |
-| "Plan X" | Use planner skill → `workspace/outputs/reports/` |
+| "Plan X" | Use planner skill -> `workspace/outputs/reports/` |
 | "Review X" | Use reviewer skill |
 | "Clone repo X" | Clone to `workspace/sandbox/repos/<project>/` |
 | Provides files | Check `workspace/resources/` |

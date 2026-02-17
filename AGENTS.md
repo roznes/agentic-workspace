@@ -16,10 +16,16 @@ See `shared/rules/coding-standards.md`
 
 Available: `planner`, `reviewer`
 
+Skills location: `.agents/skills/`
+
 Browse [skills.sh](https://skills.sh/) for more:
 ```
 npx skills add <owner>/<skill-name>
 ```
+
+## Configuration
+
+See `.codex/config.toml` for sandbox, approval, and model settings.
 
 ## Workspace
 

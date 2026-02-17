@@ -4,10 +4,32 @@ Skills are reusable capabilities for AI agents. They load only when relevant, sa
 
 ## Included Skills
 
-| Skill | Location | Trigger |
-|-------|----------|---------|
-| `planner` | `shared/skills/planner/` | "plan", "design", "architect", "how should I implement" |
-| `reviewer` | `shared/skills/reviewer/` | "review", "check", "audit", "is this code good" |
+| Skill | Trigger |
+|-------|---------|
+| `planner` | "plan", "design", "architect", "how should I implement" |
+| `reviewer` | "review", "check", "audit", "is this code good" |
+
+## Skills Architecture
+
+Skills are maintained in two places:
+
+**Universal source (shared by all agents):**
+```
+shared/skills/
+├── planner/SKILL.md
+├── reviewer/SKILL.md
+└── my-custom-skill/SKILL.md
+```
+
+**Agent-native locations (auto-discovered by each agent):**
+
+| Agent | Native Skills Path |
+|-------|-------------------|
+| Claude Code | `.claude/skills/` |
+| Codex CLI | `.agents/skills/` |
+| Gemini CLI | `.gemini/skills/` |
+
+This template pre-populates all native locations with the same skills from `shared/skills/`. When adding a new skill, add it to `shared/skills/` first, then copy to each agent's native directory.
 
 ## Browse & Install Skills
 
@@ -38,24 +60,6 @@ SKILLS_NO_TELEMETRY=1 npx skills add <owner>/<skill-name>
 | Security | owasp, security, audit |
 | Testing | jest, pytest, e2e, unit-test |
 
-## Skill Locations
-
-**Project skills (shared by all agents):**
-```
-shared/skills/
-├── planner/SKILL.md
-├── reviewer/SKILL.md
-└── my-custom-skill/SKILL.md
-```
-
-**User skills (per agent):**
-
-| Agent | User Location |
-|-------|---------------|
-| Claude Code | `~/.claude/skills/` |
-| Codex CLI | `$CODEX_HOME/skills/` |
-| Gemini CLI | `~/.gemini/skills/` |
-
 ## Create Custom Skills
 
 1. Create folder: `shared/skills/my-skill/`
@@ -76,7 +80,14 @@ description: Use when [triggers]. Activates for "[example phrases]".
 - Guideline 2
 ```
 
-3. Restart agent
+3. Copy to agent-native locations:
+```bash
+cp -r shared/skills/my-skill .claude/skills/
+cp -r shared/skills/my-skill .agents/skills/
+cp -r shared/skills/my-skill .gemini/skills/
+```
+
+4. Restart agent
 
 ## Skill Directory Structure
 
@@ -88,11 +99,22 @@ my-skill/
 └── assets/           # Optional - templates
 ```
 
+## User Skills (per agent)
+
+| Agent | User Location |
+|-------|---------------|
+| Claude Code | `~/.claude/skills/` |
+| Codex CLI | `~/.agents/skills/` |
+| Gemini CLI | `~/.gemini/skills/` |
+
 ## Uninstall Skills
 
 ```bash
-# Project skill (affects all agents)
+# Project skill (all locations)
 rm -rf shared/skills/<skill-name>
+rm -rf .claude/skills/<skill-name>
+rm -rf .agents/skills/<skill-name>
+rm -rf .gemini/skills/<skill-name>
 
 # User skill (per agent)
 rm -rf ~/.claude/skills/<skill-name>    # Claude

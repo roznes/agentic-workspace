@@ -31,16 +31,15 @@ workspace/outputs/reports/*
 workspace/outputs/exports/*
 !workspace/**/.gitkeep
 
-# Agent settings (personal/machine-specific)
-.claude/settings.json
-.gemini/settings.json
+# Agent local settings (personal/machine-specific)
+.claude/settings.local.json
+.gemini/settings.local.json
+.codex/config.local.toml
 
 # Agent local files
 CLAUDE.local.md
 AGENTS.local.md
 GEMINI.local.md
-.claude/settings.local.json
-.gemini/settings.local.json
 
 # Environment files
 .env

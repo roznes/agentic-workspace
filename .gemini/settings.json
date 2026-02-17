@@ -1,0 +1,51 @@
+{
+  "general": {
+    "defaultApprovalMode": "default",
+    "checkpointing": {
+      "enabled": true
+    }
+  },
+  "model": {
+    "compressionThreshold": 0.8
+  },
+  "tools": {
+    "sandbox": true,
+    "shell": {
+      "enableInteractiveShell": false
+    }
+  },
+  "context": {
+    "fileName": ["GEMINI.md"],
+    "fileFiltering": {
+      "respectGitIgnore": true
+    }
+  },
+  "security": {
+    "environmentVariableRedaction": {
+      "enabled": true,
+      "blocked": [
+        "API_KEY",
+        "SECRET",
+        "PASSWORD",
+        "TOKEN",
+        "CREDENTIAL",
+        "PRIVATE_KEY"
+      ]
+    }
+  },
+  "hooks": {
+    "BeforeTool": [
+      {
+        "matcher": "write_file|replace",
+        "hooks": [
+          {
+            "name": "secret-scanner",
+            "type": "command",
+            "command": "shared/hooks/block-secrets.sh",
+            "description": "Block writing files that contain hardcoded secrets"
+          }
+        ]
+      }
+    ]
+  }
+}

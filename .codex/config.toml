@@ -1,0 +1,37 @@
+# Codex CLI Configuration
+# Docs: https://developers.openai.com/codex/config-reference/
+
+# Model selection
+# model = "gpt-5.3-codex"
+
+# Approval policy: "untrusted" | "on-failure" | "on-request" | "never"
+approval_policy = "on-request"
+
+# Sandbox mode: "read-only" | "workspace-write" | "danger-full-access"
+sandbox_mode = "workspace-write"
+
+# Reasoning effort: "minimal" | "low" | "medium" | "high" | "xhigh"
+model_reasoning_effort = "high"
+
+# Personality: "friendly" | "pragmatic" | "none"
+personality = "friendly"
+
+# AGENTS.md max size in bytes (default 32768)
+project_doc_max_bytes = 32768
+
+# History persistence: "save-all" | "none"
+history = "save-all"
+
+# Web search: "cached" | "live" | "disabled"
+web_search = "cached"
+
+[features]
+shell_snapshot = true
+undo = true
+
+[shell_environment_policy]
+inherit = "core"
+exclude = ["AWS_*", "SECRET_*", "TOKEN_*", "*_KEY", "*_PASSWORD"]
+
+[sandbox_workspace_write]
+network_access = false

@@ -9,16 +9,29 @@ agentic-workspace/
 ├── CLAUDE.md                 # Claude Code instructions
 ├── AGENTS.md                 # Codex CLI instructions
 ├── GEMINI.md                 # Gemini CLI instructions
+├── .geminiignore             # Exclude files from Gemini context
+│
+├── .claude/                  # Claude Code config
+│   ├── settings.json         # Permissions, hooks
+│   └── skills/               # planner, reviewer
+│
+├── .codex/                   # Codex CLI config
+│   └── config.toml           # Sandbox, approval, model settings
+│
+├── .agents/                  # Codex skills (native location)
+│   └── skills/               # planner, reviewer
+│
+├── .gemini/                  # Gemini CLI config
+│   ├── settings.json         # Tools, sandbox, security, hooks
+│   └── skills/               # planner, reviewer
 │
 ├── shared/                   # Shared across all agents
 │   ├── README.md             # Quick context for AI
 │   ├── context/              # User-added context files
 │   ├── knowledge/            # Memories by topic (say "remember")
-│   ├── rules/                # Coding standards
-│   └── skills/               # planner, reviewer
-│
-├── .claude/                  # Claude settings
-├── .gemini/                  # Gemini settings
+│   ├── rules/                # Coding standards (universal)
+│   ├── skills/               # planner, reviewer (universal)
+│   └── hooks/                # Shared hook scripts
 │
 ├── docs/
 │   ├── guides/               # Setup, skills, usage
@@ -26,17 +39,8 @@ agentic-workspace/
 │
 └── workspace/                # Local work (gitignored)
     ├── resources/            # Input: docs, images, data
-    │   ├── docs/             # Reference documents
-    │   ├── images/           # Screenshots, diagrams
-    │   └── data/             # Data files (JSON, CSV)
     ├── outputs/              # Generated code, reports
-    │   ├── generated/        # AI-generated code
-    │   ├── reports/          # Generated reports
-    │   └── exports/          # Exported files
     ├── sandbox/              # Experiments & repos
-    │   ├── repos/            # Cloned repos for AI review
-    │   ├── experiments/      # Code experiments
-    │   └── test-data/        # Test data
     └── temp/                 # Session scratch files
 ```
 
@@ -48,6 +52,16 @@ cd my-project
 claude                        # or: codex, gemini
 ```
 
+## Agent Configuration
+
+| Agent | Instructions | Config | Skills |
+|-------|-------------|--------|--------|
+| Claude Code | `CLAUDE.md` | `.claude/settings.json` | `.claude/skills/` |
+| Codex CLI | `AGENTS.md` | `.codex/config.toml` | `.agents/skills/` |
+| Gemini CLI | `GEMINI.md` | `.gemini/settings.json` | `.gemini/skills/` |
+
+All agents share `shared/rules/`, `shared/skills/`, and `shared/hooks/`.
+
 ## Skills
 
 Built-in: `planner`, `reviewer`
@@ -58,9 +72,9 @@ Browse [skills.sh](https://skills.sh) for your stack:
 npx skills add <owner>/<skill-name>
 ```
 
-Popular skills:
-- `vercel-labs/agent-skills` — React, web design
-- `anthropics/skills` — Frontend, skill creator
+## Hooks
+
+Shared secret scanning hook (`shared/hooks/block-secrets.sh`) used by all agents to block writing files with hardcoded secrets.
 
 ## Workflow
 

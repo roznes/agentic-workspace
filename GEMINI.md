@@ -16,6 +16,8 @@
 
 Available: `planner`, `reviewer`
 
+Skills location: `.gemini/skills/`
+
 Browse [skills.sh](https://skills.sh/) for more:
 ```
 npx skills add <owner>/<skill-name>
