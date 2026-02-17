@@ -15,12 +15,6 @@ shared/                    # YOU ARE HERE - shared across all agents
 ├── skills/reviewer/       # Code review skill
 ├── hooks/block-secrets.sh # Secret scanning (used by all agents)
 └── context/               # User-added context files
-
-workspace/                 # Local work area (gitignored content)
-├── resources/             # INPUT: docs, images, data
-├── outputs/               # OUTPUT: generated code, reports
-├── sandbox/               # Experiments & repos
-└── temp/                  # Session scratch files
 ```
 
 ## Key Behaviors
@@ -37,14 +31,6 @@ workspace/                 # Local work area (gitignored content)
 
 - **planner** - Create implementation plans before coding
 - **reviewer** - Code review with checklist
-
-## Workspace Paths
-
-| Input | Output |
-|-------|--------|
-| `workspace/resources/docs/` | `workspace/outputs/generated/` |
-| `workspace/resources/images/` | `workspace/outputs/reports/` |
-| `workspace/resources/data/` | `workspace/outputs/exports/` |
 
 ## Code Style
 

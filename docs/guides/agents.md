@@ -19,9 +19,11 @@ shared/
 ├── knowledge/             # Persistent memories by topic
 │   └── [topic]/README.md
 ├── rules/coding-standards.md
-└── skills/
-    ├── planner/SKILL.md
-    └── reviewer/SKILL.md
+├── skills/
+│   ├── planner/SKILL.md
+│   └── reviewer/SKILL.md
+└── hooks/
+    └── block-secrets.sh   # Secret scanning (used by all agents)
 ```
 
 ## Agent-Native Config
@@ -48,9 +50,6 @@ Each agent also has its own native config directory:
 └── skills/                # planner, reviewer
     ├── planner/SKILL.md
     └── reviewer/SKILL.md
-
-shared/hooks/
-└── block-secrets.sh       # Secret scanning (used by all agents)
 ```
 
 ## Claude Code (Anthropic)
@@ -106,7 +105,6 @@ npm install -g @google/gemini-cli
 - `GEMINI.md` - Project instructions (references shared/ via `@` imports)
 - `.gemini/settings.json` - Tools, sandbox, security, hooks
 - `.gemini/skills/` - Agent-native skills directory
-- `.geminiignore` - Exclude files from Gemini context
 
 **Config highlights:**
 - Sandbox enabled by default

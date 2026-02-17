@@ -9,8 +9,6 @@ agentic-workspace/
 ├── CLAUDE.md                 # Claude Code instructions
 ├── AGENTS.md                 # Codex CLI instructions
 ├── GEMINI.md                 # Gemini CLI instructions
-├── .geminiignore             # Exclude files from Gemini context
-│
 ├── .claude/                  # Claude Code config
 │   ├── settings.json         # Permissions, hooks
 │   └── skills/               # planner, reviewer
@@ -29,9 +27,9 @@ agentic-workspace/
 │   ├── README.md             # Quick context for AI
 │   ├── context/              # User-added context files
 │   ├── knowledge/            # Memories by topic (say "remember")
-│   ├── rules/                # Coding standards (universal)
-│   ├── skills/               # planner, reviewer (universal)
-│   └── hooks/                # Shared hook scripts
+│   ├── rules/                # Coding standards
+│   ├── skills/               # planner, reviewer
+│   └── hooks/                # Secret scanning script
 │
 ├── docs/
 │   ├── guides/               # Setup, skills, usage
