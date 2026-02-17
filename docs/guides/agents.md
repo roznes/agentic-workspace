@@ -2,10 +2,10 @@
 
 ## Quick Reference
 
-| Agent | Instruction File | Config | Skills | Run Command |
-|-------|------------------|--------|--------|-------------|
+| Agent | Instruction File | Config | Skills / Prompts | Run Command |
+|-------|------------------|--------|------------------|-------------|
 | Claude Code | `CLAUDE.md` | `.claude/settings.json` | `.claude/skills/` | `claude` |
-| Codex CLI | `AGENTS.md` | `.codex/config.toml` | `.codex/prompts/` | `codex` |
+| Codex CLI | `AGENTS.md` | `.codex/config.toml` | `.agents/skills/` + `.codex/prompts/` | `codex` |
 | Gemini CLI | `GEMINI.md` | `.gemini/settings.json` | `.gemini/skills/` | `gemini` |
 
 ## Shared Resources
@@ -39,12 +39,12 @@ Each agent also has its own native config directory:
 
 .codex/
 ├── config.toml            # Sandbox, approval, model settings
-└── prompts/               # Codex reusable prompts
+└── prompts/               # Codex reusable prompts/commands
     ├── planner.md
     └── reviewer.md
 
 .agents/
-└── skills/                # Shared skills mirror for Codex workflows
+└── skills/                # Codex Skills (official SKILL.md location)
     ├── planner/SKILL.md
     └── reviewer/SKILL.md
 
@@ -86,8 +86,8 @@ npm install -g @openai/codex
 **Files:**
 - `AGENTS.md` - Project instructions (references shared/ via backticks)
 - `.codex/config.toml` - Sandbox, approval policy, model settings
-- `.codex/prompts/` - Codex reusable prompts
-- `.agents/skills/` - Shared skill mirror used by this template
+- `.agents/skills/` - Codex Skills (`SKILL.md` format)
+- `.codex/prompts/` - Codex reusable prompts/commands (`.md`)
 
 **Config highlights:**
 - Sandbox: `workspace-write` (no network by default)
@@ -133,7 +133,7 @@ See `shared/README.md`
 
 ## Hooks
 
-Hooks are available in Claude and Gemini configs. Codex relies on sandbox/approval controls and reusable prompts.
+Hooks are available in Claude and Gemini configs. Codex relies on sandbox/approval controls, skills, and reusable prompts.
 
 | Agent | Config Location | Hook Events |
 |-------|----------------|-------------|

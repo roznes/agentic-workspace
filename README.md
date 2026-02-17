@@ -15,9 +15,9 @@ agentic-workspace/
 │
 ├── .codex/                   # Codex CLI config
 │   ├── config.toml           # Sandbox, approval, model settings
-│   └── prompts/              # Codex reusable prompts
+│   └── prompts/              # Codex reusable prompts/commands
 │
-├── .agents/                  # Shared skills mirror for Codex workflows
+├── .agents/                  # Codex Skills (official SKILL.md location)
 │   └── skills/               # planner, reviewer
 │
 ├── .gemini/                  # Gemini CLI config
@@ -53,10 +53,10 @@ claude                        # or: codex, gemini
 
 ## Agent Configuration
 
-| Agent | Instructions | Config | Skills |
-|-------|-------------|--------|--------|
+| Agent | Instructions | Config | Skills / Prompts |
+|-------|-------------|--------|------------------|
 | Claude Code | `CLAUDE.md` | `.claude/settings.json` | `.claude/skills/` |
-| Codex CLI | `AGENTS.md` | `.codex/config.toml` | `.codex/prompts/` |
+| Codex CLI | `AGENTS.md` | `.codex/config.toml` | `.agents/skills/` + `.codex/prompts/` |
 | Gemini CLI | `GEMINI.md` | `.gemini/settings.json` | `.gemini/skills/` |
 
 All agents share `shared/rules/`, `shared/skills/`, and `shared/hooks/`.

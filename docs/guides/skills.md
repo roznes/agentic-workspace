@@ -21,16 +21,27 @@ shared/skills/
 └── my-custom-skill/SKILL.md
 ```
 
-**Agent-native locations (auto-discovered by each agent):**
+**Agent-native skill locations (auto-discovered by each agent):**
 
 | Agent | Native Path | Format |
 |-------|------------|--------|
 | Claude Code | `.claude/skills/` | `SKILL.md` |
-| Codex CLI | `.codex/prompts/` | Plain `.md` prompts |
-| Codex CLI | `.agents/skills/` | `SKILL.md` (shared mirror) |
+| Codex CLI | `.agents/skills/` | `SKILL.md` |
 | Gemini CLI | `.gemini/skills/` | `SKILL.md` |
 
-This template pre-populates all native locations. Codex uses lightweight `.md` prompts in `.codex/prompts/` and also reads `SKILL.md` files from `.agents/skills/`.
+This template pre-populates all native skill locations.
+
+## Codex Prompts (not Skills)
+
+Codex also supports reusable prompts/commands in:
+
+```
+.codex/prompts/
+├── planner.md
+└── reviewer.md
+```
+
+Use `.agents/skills/` for official Codex Skills and `.codex/prompts/` for lightweight reusable prompts.
 
 ## Browse & Install Skills
 
@@ -86,8 +97,9 @@ description: Use when [triggers]. Activates for "[example phrases]".
 cp -r shared/skills/my-skill .claude/skills/
 cp -r shared/skills/my-skill .agents/skills/
 cp -r shared/skills/my-skill .gemini/skills/
-# For Codex, create a lightweight prompt in .codex/prompts/my-skill.md
 ```
+
+Optional: create a matching Codex prompt at `.codex/prompts/my-skill.md`.
 
 4. Restart agent
 
@@ -106,8 +118,14 @@ my-skill/
 | Agent | User Location |
 |-------|---------------|
 | Claude Code | `~/.claude/skills/` |
-| Codex CLI | `~/.codex/prompts/` or `~/.agents/skills/` |
+| Codex CLI | `~/.agents/skills/` |
 | Gemini CLI | `~/.gemini/skills/` |
+
+## User Prompts (Codex)
+
+| Agent | User Location |
+|-------|---------------|
+| Codex CLI | `~/.codex/prompts/` |
 
 ## Uninstall Skills
 
