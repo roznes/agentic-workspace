@@ -11,6 +11,8 @@ workspace/temp/*
 workspace/resources/*
 workspace/sandbox/*
 !workspace/sandbox/experiments/
+!workspace/sandbox/repos/
+!workspace/sandbox/test-data/
 workspace/outputs/*
 !workspace/**/.gitkeep
 
