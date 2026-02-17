@@ -23,7 +23,7 @@ shared/
 │   ├── planner/SKILL.md
 │   └── reviewer/SKILL.md
 └── hooks/
-    └── block-secrets.sh   # Secret scanning (used by all agents)
+    └── block-secrets.sh   # Secret scanning (Claude, Gemini)
 ```
 
 ## Agent-Native Config
